@@ -1,0 +1,385 @@
+:root {
+  --Bright-Red: hsl(12, 88%, 59%);
+  --Dark-Blue: hsl(228, 39%, 23%);
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-padding-top: 4rem;
+}
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--Dark-Blue);
+  font-weight: 700;
+}
+
+p {
+  font-weight: 400;
+}
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/*swiper*/
+.swiper {
+  min-width: 320px;
+  max-width: 1200px;
+  height: 250px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-slide img {
+  width: 250px;
+  height: 150px;
+}
+
+main {
+  text-align: center;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.img-wsp {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 100;
+}
+.img-wsp-desktop {
+  display: none;
+}
+.img-wsp img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 0.3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .img-wsp-mobile {
+    display: none;
+  }
+  .img-wsp-desktop {
+    display: initial;
+  }
+}
+
+/*header*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  position: sticky;
+  top: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 100;
+  box-shadow: 0.4rem 0 0.4rem grey;
+}
+
+.img-logo {
+  font-size: 26px;
+  color: var(--Bright-Red);
+}
+.text-logo {
+  font-size: 24px;
+  color: var(--Bright-Red);
+  font-weight: 700;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+  padding-bottom: 1rem;
+  margin-top: 0;
+  border-top: 1px solid black;
+  list-style: none;
+  position: absolute;
+  top: 99%;
+  left: 0;
+  right: 0;
+  background-color: var(--Dark-Blue);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+  transition: clip-path 0.3s ease;
+}
+
+.menu-is-active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.menu__link {
+  display: block;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.menu__link:hover {
+  border-radius: 1rem;
+}
+
+.icon-menu {
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .icon-menu {
+    display: none;
+  }
+  .menu {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0;
+    margin-top: 0;
+    position: initial;
+    margin-top: 0.5rem;
+    border-top: none;
+    background-color: #fff;
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .menu__link {
+    padding: 0.3rem 1.5rem;
+    margin-top: 1rem;
+    color: var(--Dark-Blue);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    justify-content: space-around;
+  }
+}
+
+.section {
+  width: 100%;
+}
+
+/*inicio*/
+.inicio {
+  display: grid;
+  align-items: center;
+}
+
+.img-home {
+  width: 100%;
+  height: 55vh;
+  display: flex;
+  align-items: center;
+}
+.img-home img {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.btn-contact {
+  background-color: var(--Bright-Red);
+  padding: 0.7rem 1.5rem;
+  border-radius: 1rem;
+  border: transparent;
+  font-size: 20px;
+  font-weight: 600;
+}
+.btn-contact-desktop {
+  display: none;
+}
+.btn-contact a {
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .inicio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .img-home {
+    height: 80vh;
+  }
+  .btn-contact-desktop {
+    display: initial;
+  }
+  .btn-contact-mobile {
+    display: none;
+  }
+}
+
+/*cards*/
+.cards {
+  margin-top: 5rem;
+}
+.card {
+  min-width: 250px;
+  max-width: 450px;
+  margin: 2rem auto;
+}
+
+.card .title {
+  background-color: hsl(13, 100%, 96%);
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.2rem;
+  font-size: 1rem;
+  text-align: left;
+}
+.card span {
+  background-color: var(--Bright-Red);
+  margin-right: 1rem;
+  padding: 0.2rem 0.9rem;
+  border-radius: 1rem;
+  color: white;
+  /*  font-size: 1.1rem; */
+}
+.icon {
+  font-size: 32px;
+  color: var(--Dark-Blue);
+}
+/* .title {
+    color: hsl(12, 88%, 59%);
+  } */
+
+/*form*/
+.contact {
+  margin-top: 6rem;
+  padding-bottom: 1rem;
+  /*  background-color: var(--Dark-Blue); */
+  background-color: rgb(51, 149, 230);
+  text-align: center;
+}
+
+.contact h2 {
+  color: white;
+  padding-top: 1.5rem;
+}
+
+.form {
+  /* background-color: rgb(29, 31, 34); */
+  background-color: white;
+
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .form {
+    width: 60%;
+  }
+}
+
+.input-name,
+.input-email {
+  margin: 1rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2.5px solid rgb(51, 149, 230);
+  outline: transparent;
+}
+.input-name:focus,
+.input-email:focus,
+textarea:focus {
+  outline: 2px solid rgb(51, 149, 230);
+}
+.input-submit {
+  display: block;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+  /* border: 3px solid rgb(31, 82, 198); */
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  border: transparent;
+  background-color: rgb(51, 149, 230);
+  color: white;
+  cursor: pointer;
+}
+
+.form-dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+textarea {
+  resize: none;
+  width: 100%;
+  height: 150px;
+  border: 2px solid rgb(51, 149, 230);
+  margin-top: 1.4rem;
+  border-radius: 0.5rem;
+  outline: transparent;
+  padding: 1rem;
+}
+
+.form [required]:valid {
+  border: thin solid green;
+}
+
+/* .form [required]:invalid {
+    border: thin solid red;
+  } */
+.form-error {
+  padding: 0.4rem;
+  margin-top: -1rem;
+  background-color: red;
+  font-size: 80%;
+  color: whitesmoke;
+  transition: all 0.5 ease-in;
+}
+
+.form-error.is-active {
+  display: block;
+  width: 100%;
+  animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+  display: none;
+}
+
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+/* footer */
+footer {
+  text-align: center;
+}
